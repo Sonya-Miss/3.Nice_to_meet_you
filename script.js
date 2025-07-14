@@ -1,37 +1,28 @@
 // --- НАЛАШТУВАННЯ ДЛЯ ГРИ 1: Перетягни слово до картинки ---
 const dragAndDropPuzzlesData = [
-    { correctWord: "Hello", image: "./Pictures/Привіт.jpg", draggableWord: "Hello" },
-    { correctWord: "Hi", image: "./Pictures/Привіт.jpg", draggableWord: "Hi" },
-    { correctWord: "Good morning", image: "./Pictures/Добрий ранок.jpg", draggableWord: "Good morning" },
-    { correctWord: "Good afternoon", image: "./Pictures/Добрий день.jpg", draggableWord: "Good afternoon" },
-    { correctWord: "Good evening", image: "./Pictures/Добрий вечір.jpg", draggableWord: "Good evening" },
-    { correctWord: "Good night", image: "./Pictures/Добраніч.jpg", draggableWord: "Good night" }
+    { correctWord: "How are you", image: "./Pictures/як твої справи.jpg", draggableWord: "How are you" },
+    { correctWord: "I'm good", image: "./Pictures/добре.jpg", draggableWord: "I'm good" },
+    { correctWord: "I'm happy", image: "./Pictures/щасливий.jpg", draggableWord: "I'm happy" },
+    { correctWord: "I'm great", image: "./Pictures/чудово.jpg", draggableWord: "I'm great" },
+    { correctWord: "I'm sad", image: "./Pictures/сумний.jpg", draggableWord: "I'm sad" },
+    { correctWord: "I'm tired", image: "./Pictures/втомлений.jpg", draggableWord: "I'm tired" },
+    { correctWord: "I'm hungry", image: "./Pictures/голодний.jpg", draggableWord: "I'm hungry" }
 ];
 
 // --- НАЛАШТУВАННЯ ДЛЯ ГРИ 2: Склади слово з літер ---
 const letterPuzzlesData = [
-    { phrase: "How are you", image: "./Pictures/як твої справи.jpg" },
-    { phrase: "I'm good", image: "./Pictures/добре.jpg" },
-    { phrase: "I'm happy", image: "./Pictures/щасливий.jpg" },
-    { phrase: "I'm great", image: "./Pictures/чудово.jpg" },
-    { phrase: "I'm sad", image: "./Pictures/сумний.jpg" },
-    { phrase: "I'm tired", image: "./Pictures/втомлений.jpg" },
-    { phrase: "I'm hungry", image: "./Pictures/голодний.jpg" }
+    { phrase: "Nice to meet you", image: "./Pictures/Приємно познайомитись.jpg" },
+    { phrase: "What is your name", image: "./Pictures/Як тебе звати.jpg" },
+    { phrase: "I am", image: "./Pictures/Я.jpg" },
+    { phrase: "My name is", image: "./Pictures/Мене звати.jpg" },
+    { phrase: "Bye", image: "./Pictures/Пока.jpg" },
+    { phrase: "Goodbye", image: "./Pictures/До побачення.jpg" }
 ];
+
 
 
 // Зображення для каруселі
 const carouselImages = [
-    { src: "./Pictures/Hello.jpg", alt: "Привітання Hello" },
-    { src: "./Pictures/Hi.jpg", alt: "Привітання Hi" },
-    { src: "./Pictures/Good morning.jpg", alt: "Привітання Good Morning" },
-    { src: "./Pictures/Good afternoon.jpg", alt: "Привітання Good Afternoon" },
-    { src: "./Pictures/Good evening.jpg", alt: "Привітання Good Evening" },
-    { src: "./Pictures/Good night.jpg", alt: "Привітання Good night" }
-];
-
-// Зображення для каруселі
-const carouselImages2 = [
     { src: "./Pictures/How are you.jpg", alt: "How are you" },
     { src: "./Pictures/good.jpg", alt: "good" },
     { src: "./Pictures/happy.jpg", alt: "happy" },
@@ -41,15 +32,24 @@ const carouselImages2 = [
     { src: "./Pictures/hungry.jpg", alt: "hungry" }
 ];
 
+// Зображення для каруселі  2
+const carouselImages2 = [
+    { src: "./Pictures/Nice to meet you.jpg", alt: "Nice to meet you" },
+    { src: "./Pictures/What is your name.jpg", alt: "What is your name" },
+    { src: "./Pictures/I am.jpg", alt: "I am" },
+    { src: "./Pictures/My name is.jpg", alt: "My name is" },
+    { src: "./Pictures/Bye.jpg", alt: "Bye" },
+    { src: "./Pictures/Goodbye.jpg", alt: "Goodbye" }
+];
+
 // --- НАЛАШТУВАННЯ ДЛЯ ГРИ 3: ВПІЗНАЙ СЛОВО НА СЛУХ (АУДІО-ГРА) ---
 const audioPuzzlesData = [
-    { word: "I'm great", audio: "./Audio/great.mp3" },
-    { word: "I'm sad", audio: "./Audio/sad.mp3" },
-    { word: "I'm happpy", audio: "./Audio/happy.mp3" },
-    { word: "I'm hungry", audio: "./Audio/hungry.mp3" },
-    { word: "I'm tired", audio: "./Audio/tired.mp3" },
-    { word: "How are you", audio: "./Audio/how are you.mp3" },
-    { word: "I'm good", audio: "./Audio/good.mp3" },
+    { word: "My name is", audio: "./Audio/My name is.mp3" },
+    { word: "Bye", audio: "./Audio/Bye.mp3" },
+    { word: "What is your name", audio: "./Audio/What is your name.mp3" },
+    { word: "I am", audio: "./Audio/I am.mp3" },
+    { word: "Goodbye", audio: "./Audio/Goodbye.mp3" },
+    { word: "Nice to meet you", audio: "./Audio/Nice to meet you.mp3" }
 ];
 
 
@@ -279,11 +279,6 @@ function checkWordDropResult(correctWord, wordDropZone, messageEl, checkBtn) {
     }
 }
 
-/////////////////////////////////////////////////// --- ПЕРЕТЯГНИ СЛОВО ДО КАРТИНКИ 1.2 --- //////////////////////////////////////////
-
-
-
-
 
 //////////////////////////////////////////////////////// --- ФУНКЦІЇ ДЛЯ ГРИ 2: Склади слово з літер ---//////////////////////////////////////
 
@@ -503,7 +498,7 @@ function addAudioDropZoneListeners(dropZone) {
             if (existingWordInDropZone) {
                 document.getElementById('word-bank').appendChild(existingWordInDropZone);
                 existingWordInDropZone.classList.remove('audio-dropped-word', 'correct-word-box', 'incorrect-word-box');
-                existingWordInDropZone.classList.add('bg-blue-300', 'hover:bg-blue-400', 'text-white');
+                existingWordInDropZone.classList.add('bg-blue-500', 'hover:bg-blue-400', 'text-white');
                 existingWordInDropZone.draggable = true;
                 addAudioDraggableWordListeners(); // Повторно додаємо слухачів
             }
@@ -523,7 +518,7 @@ function addAudioDropZoneListeners(dropZone) {
                 // Видаляємо класи результату з елемента, якщо вони були
                 if (draggedWordElement.classList.contains('correct-word-box') || draggedWordElement.classList.contains('incorrect-word-box')) {
                     draggedWordElement.classList.remove('correct-word-box', 'incorrect-word-box');
-                    draggedWordElement.classList.add('bg-blue-300', 'hover:bg-blue-400', 'text-white');
+                    draggedWordElement.classList.add('bg-blue-400', 'hover:bg-blue-600', 'text-white');
                 }
                 
                 // Якщо кнопка перевірки була вимкнена, увімкнути її, якщо слово замінено
@@ -573,7 +568,7 @@ function checkAudioGameResult(correctWord, dropZone, messageEl, checkBtn, playBt
         dropZone.classList.remove('incorrect');
         checkBtn.disabled = true; 
         playBtn.disabled = true; 
-        droppedWordElement.classList.remove('bg-blue-300', 'hover:bg-blue-400', 'text-white', 'incorrect-word-box'); 
+        droppedWordElement.classList.remove('bg-blue-400', 'hover:bg-blue-600', 'text-white', 'incorrect-word-box'); 
         droppedWordElement.classList.add('correct-word-box'); 
         droppedWordElement.draggable = false; 
         droppedWordElement.style.cursor = 'default'; // Змінюємо курсор
@@ -590,14 +585,14 @@ function checkAudioGameResult(correctWord, dropZone, messageEl, checkBtn, playBt
         messageEl.className = "mt-1 h-4 text-center text-xs font-medium text-red-500";
         dropZone.classList.add('incorrect');
         dropZone.classList.remove('correct');
-        droppedWordElement.classList.remove('bg-blue-300', 'hover:bg-blue-400', 'text-white', 'correct-word-box');
+        droppedWordElement.classList.remove('bg-blue-400', 'hover:bg-blue-600', 'text-white', 'correct-word-box');
         droppedWordElement.classList.add('incorrect-word-box'); 
         
         setTimeout(() => {
             dropZone.innerHTML = `<span class="placeholder text-sm font-normal text-gray-400">Перетягніть слово сюди</span>`;
             dropZone.classList.remove('incorrect');
             droppedWordElement.classList.remove('incorrect-word-box', 'opacity-50', 'audio-dropped-word'); 
-            droppedWordElement.classList.add('bg-blue-300', 'hover:bg-blue-400', 'text-white'); 
+            droppedWordElement.classList.add('bg-blue-400', 'hover:bg-blue-600', 'text-white'); 
             audioWordBank.appendChild(droppedWordElement); 
             droppedWordElement.draggable = true; 
             droppedWordElement.style.cursor = 'grab'; // Повернути курсор
@@ -655,7 +650,7 @@ function createAudioGameWordBank() {
     shuffleArray([...audioPuzzlesData]).forEach(({ word }) => {
         const wordEl = document.createElement("div");
         wordEl.textContent = word;
-        wordEl.className = "audio-draggable-word bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg cursor-grab active:cursor-grabbing transition-transform duration-100 ease-out";
+        wordEl.className = "audio-draggable-word bg-blue-300 hover:bg-blue-400 text-blue-800 font-bold py-2 px-4 rounded-lg cursor-grab active:cursor-grabbing transition-transform duration-100 ease-out";
         wordEl.setAttribute("draggable", true);
         wordEl.dataset.word = word; 
         audioWordBank.appendChild(wordEl);
@@ -778,22 +773,22 @@ function showSlide2(index) {
 
 
 function nextSlide2() {
-    showSlide2(currentSlide2 + 1); // ✅ ПРАВИЛЬНО
+    showSlide2(currentSlide2 + 1);
 }
 
 function prevSlide2() {
-    showSlide2(currentSlide2 - 1); // ✅ ПРАВИЛЬНО
+    showSlide2(currentSlide2 - 1);
 }
 
 function startCarouselAutoPlay2() {
-    stopCarouselAutoPlay2(); // ✅ правильна назва
+    stopCarouselAutoPlay2();
     carouselInterval2 = setInterval(() => {
         nextSlide2();
     }, 4000);
 }
 
 function stopCarouselAutoPlay2() {
-    clearInterval(carouselInterval2); // ✅ правильна змінна
+    clearInterval(carouselInterval2);
 }
 
 
@@ -826,9 +821,4 @@ document.addEventListener('DOMContentLoaded', () => {
             initializeCarousel2();
     carouselPrevBtn2.addEventListener('click', prevSlide2); 
     carouselNextBtn2.addEventListener('click', nextSlide2);
-
-    //     createDraggableWords2();
-    // dragAndDropPuzzlesData2.forEach((data, index) => {
-    //     createDragAndDropPuzzle2(data, index);
-    // });
 });

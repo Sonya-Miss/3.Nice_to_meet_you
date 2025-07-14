@@ -1,14 +1,10 @@
-// game2_drag_and_drop.js
-
-// --- ДАНІ ДЛЯ ГРИ 2 ---
 const dragAndDropPuzzlesData2 = [
-    { correctWord: "How are you", image: "./Pictures/як твої справи.jpg", draggableWord: "How are you" },
-    { correctWord: "I'm good", image: "./Pictures/добре.jpg", draggableWord: "I'm good" },
-    { correctWord: "I'm happy", image: "./Pictures/щасливий.jpg", draggableWord: "I'm happy" },
-    { correctWord: "I'm great", image: "./Pictures/чудово.jpg", draggableWord: "I'm great" },
-    { correctWord: "I'm sad", image: "./Pictures/сумний.jpg", draggableWord: "I'm sad" },
-    { correctWord: "I'm tired", image: "./Pictures/втомлений.jpg", draggableWord: "I'm tired" },
-    { correctWord: "I'm hungry", image: "./Pictures/голодний.jpg", draggableWord: "I'm hungry" }
+    { correctWord: "What is your name", image: "./Pictures/Як тебе звати.jpg", draggableWord: "What is your name" },
+    { correctWord: "Nice to meet you", image: "./Pictures/Приємно познайомитись.jpg", draggableWord: "Nice to meet you" },
+    { correctWord: "Bye", image: "./Pictures/Пока.jpg", draggableWord: "Bye" },
+    { correctWord: "I am", image: "./Pictures/Я.jpg", draggableWord: "I am" },
+    { correctWord: "Goodbye", image: "./Pictures/До побачення.jpg", draggableWord: "Goodbye" },
+    { correctWord: "My name is", image: "./Pictures/Мене звати.jpg", draggableWord: "My name is" }
 ];
 
 // Глобальна змінна для відстеження перетягуваного елемента для ЦІЄЇ ГРИ
